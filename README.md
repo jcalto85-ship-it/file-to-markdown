@@ -4,7 +4,7 @@ emoji: 📝
 colorFrom: blue
 colorTo: indigo
 sdk: gradio
-sdk_version: 4.44.1
+sdk_version: 6.20.0
 app_file: app.py
 pinned: false
 ---
@@ -14,9 +14,14 @@ pinned: false
 App web para convertir prácticamente cualquier archivo a Markdown, usando
 [MarkItDown](https://github.com/microsoft/markitdown) (Microsoft) + [Gradio](https://gradio.app).
 
-Formatos soportados: PDF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx), imágenes
-(con OCR/metadatos EXIF), audio (transcripción), HTML, CSV, JSON, XML, ZIP, EPub,
-texto plano y más.
+Formatos soportados: PDF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx), audio
+(transcripción), HTML, CSV, JSON, XML, ZIP, EPub, texto plano y más.
+
+Para imágenes, por defecto solo se extraen sus metadatos EXIF (MarkItDown no
+incluye OCR nativo). Si el usuario ingresa su propia API key de OpenAI en las
+"Opciones avanzadas" de la interfaz, además se genera una descripción del
+contenido visual usando `gpt-4o-mini`. La key no se guarda ni se comparte: solo
+se usa en memoria para esa conversión.
 
 ## Uso local
 
